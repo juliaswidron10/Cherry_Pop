@@ -1,0 +1,226 @@
+/*  @import url("https://use.typekit.net/vsb3pbo.css");*/
+
+:root {
+    --bg-color:#19608C;
+    --link-color: #FFFFFF;
+    --link-hover-color: ;
+    --pink-color: #FF0760;
+
+    --primary-font: 'objektiv-mk2', sans-serif;
+    --main-text-color: #000000;
+
+    --white-space: 1.2rem;
+}
+
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--primary-font);
+    font-weight: 300;
+    font-size: 18px;
+}
+
+/*HEADING STYLING*/
+h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+h1 {
+    grid-area: title1;
+    color: var(--link-color);
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+hr {
+    border-top: 2px solid white;
+    width: 65%;
+    margin-left: 0px;
+}
+
+/*GRID ELEMENTS*/
+
+.faq-container {
+    grid-area: faq-container;
+    z-index: 5;
+}
+
+.artwork-container {
+    grid-area: artwork-container;
+}
+
+/*FAQ ELEMENTS*/
+
+.faq-question {
+    cursor: grab;
+}
+/*LOADER STYLING*/
+ul.loader{
+    border-radius: 2px;
+    margin-top: 4rem;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+ul.loader > li{
+    height: 1.2rem;
+    list-style: none;
+    margin-top: 1.5rem;
+    background-color: RGB(255,255,255, 0.1);
+}
+li.element1{
+    width: 85%;
+}
+li.element2{
+    width: 70%;
+}
+li.element3{
+    width: 100%;
+}
+li.element4{
+    width: 60%;
+}
+li.element4{
+    width: 95%;
+}
+
+/* this animation i found in codePen tutorial*/
+.gradient {
+    animation-duration: 1.8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: RGB(255,255,255, 0.1);
+    background: linear-gradient(to right, RGB(255,255,255, 0.1) 8%,RGB(255,255,255, 0.4) 38%, RGB(255,255,255, 0.1) 54%);
+    background-size: 1000px 640px;
+    position: relative;
+}
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+
+
+
+
+/*MOBILE VIEW*/
+@media only screen and (max-width: 599px) {
+
+    main {
+        margin: 4rem;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "faq-container"
+            "artwork-container";
+    }
+    .pic {
+        width: 70vw;
+        height: auto;
+    }
+
+    /*    FORM STYLING*/
+    input {
+        width: 100%;
+    }
+
+    .input-question {
+        width: 100%;
+        height: 7rem;
+    }
+
+    button {
+        margin-left: 75%;
+        margin-top: 2%;
+    }
+}
+
+/*TABLET VIEW */
+
+@media only screen and (max-width: 899px) and (min-width: 600px) {
+    main {
+        margin: 4rem 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "faq-container"
+            "artwork-container";
+    }
+
+    .pic {
+        width: auto;
+        height: 70vh;
+    }
+    .faq-container{
+        margin: 2rem 4rem;
+        height: 100vh;
+    }
+}
+
+/*BIG SCREEN*/
+@media only screen and (min-width: 900px) {
+
+    main {
+        margin:0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "faq-container artwork-container";
+    }
+    .artwork-container{
+        margin-top: -4rem;
+    }
+    button {
+        margin-left: 65%;
+        margin-top: 4%;
+    }
+
+    .pic {
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+        width: 40vw;
+        height: auto;
+        z-index: 0;
+    }
+    header{
+        margin-top: 0;
+    }
+    .faq-container{
+        margin-top: 2rem;
+        height: 100vh;
+    }
+}
+
+/*TRANSITIONS*/
+
+.visible {
+    display: block;
+    animation: visible-kf 0.5s both;
+}
+
+.hide{
+    display: none;
+}
+
+@keyframes visible-kf {
+    0% {
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
